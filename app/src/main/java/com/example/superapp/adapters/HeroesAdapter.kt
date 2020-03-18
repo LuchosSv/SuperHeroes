@@ -12,15 +12,18 @@ import com.example.superapp.interfaces.OnClickListener
 import com.example.superapp.models.HeroesDetail
 import com.example.superapp.models.HeroesResponse
 
-class HeroesAdapter (private val hero: List<HeroesResponse>, private val listener: OnClickListener):
+class HeroesAdapter (private val hero: List<HeroesDetail>, private val listener: OnClickListener):
     RecyclerView.Adapter<HeroesAdapter.ViewHolder>(){
 
-    inner class ViewHolder(itemView: View, private val listemer: OnClickListener): RecyclerView.ViewHolder(itemView){
-        fun bindData(hero: HeroesResponse){
+    inner class ViewHolder(itemView: View, private val listener: OnClickListener): RecyclerView.ViewHolder(itemView){
+        fun bindData(hero: HeroesDetail){
             val text = itemView.findViewById<TextView>(R.id.textView)
             val image = itemView.findViewById<ImageView>(R.id.imageView)
-            text.text = hero.data[0].name
-            //Glide.with(itemView).load(hero.data[0].imageHeroe).into(image)
+            text.text = hero.name
+            Glide.with(itemView).load(hero.imageHeroe).into(image)
+            image.setOnClickListener{
+                listener.clickCard(hero)
+            }
         }
     }
 

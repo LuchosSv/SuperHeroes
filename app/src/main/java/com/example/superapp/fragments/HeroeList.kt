@@ -32,7 +32,7 @@ class HeroeList : Fragment(), OnClickListener {
         super.onAttach(context)
         try {
             listener = context as ActivityListener
-        }catch (e: Exception){
+        } catch (e: Exception) {
             Log.i("MSG", "EEHH")
         }
     }
@@ -55,11 +55,11 @@ class HeroeList : Fragment(), OnClickListener {
 
         recyclerView = view.findViewById(R.id.recyclerView)
         heroesArray = HeroesList()
-        recyclerView.adapter = HeroesAdapter(heroesArray,this)
+        recyclerView.adapter = HeroesAdapter(heroesArray, this)
 
     }
 
-    private fun HeroesList(): ArrayList<HeroesDetail>{
+    private fun HeroesList(): ArrayList<HeroesDetail> {
         return arrayListOf(
             HeroesDetail(
                 "HULK",
@@ -69,10 +69,18 @@ class HeroeList : Fragment(), OnClickListener {
                 "Marvel",
                 "Hulk, es un personaje ficticio, que aparece en los cómics estadounidenses publicados por la editorial Marvel Comics.",
                 arrayListOf(
-                    PoderDetail("Super fuerza")
+                    PoderDetail(
+                        "Super fuerza",
+                        "Super Velocidad",
+                        "Aumento de Tamaño",
+                        "Cambia Color"
+                    )
                 ),
                 arrayListOf(
-                    CompañeroDetail("https://www.behance.net/gallery/38650505/Flat-Design-Hero-Avatars")
+                    CompañeroDetail(
+                        "https://www.behance.net/gallery/38650505/Flat-Design-Hero-Avatars",
+                        "com/example/superapp/fragments/HeroeList.kt:76", ""
+                    )
 
                 )
             ),
@@ -84,10 +92,14 @@ class HeroeList : Fragment(), OnClickListener {
                 "Marvel",
                 "Capitán América cuyo nombre real es Steven Steve Rogers, es un superhéroe ficticio que aparece en los cómics estadounidenses ",
                 arrayListOf(
-                    PoderDetail("Super fuerza")
+                    PoderDetail("fuerza", "Super Velocidad", "Agilidad", "Imnune a Gases")
                 ),
                 arrayListOf(
-                    CompañeroDetail("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/592db138650505.598fa11a28ec5.jpg")
+                    CompañeroDetail(
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/592db138650505.598fa11a28ec5.jpg",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3671da38650505.598fa119575fb.jpg",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a21d2d38650505.598fa28915bf8.jpg"
+                    )
 
                 )
             ),
@@ -99,10 +111,14 @@ class HeroeList : Fragment(), OnClickListener {
                 "Marvel",
                 "Anthony Edward Stark, más conocido como Tony Stark, un multimillonario magnate empresarial estadounidense, playboy e ingenioso científico.",
                 arrayListOf(
-                    PoderDetail("Super Traje")
+                    PoderDetail("Volar", "Lanza Rayos", "Fuerza", "Velocidad")
                 ),
                 arrayListOf(
-                    CompañeroDetail("https://www.behance.net/gallery/38650505/Flat-Design-Hero-Avatars")
+                    CompañeroDetail(
+                        "https://www.behance.net/gallery/38650505/Flat-Design-Hero-Avatars",
+                        "com/example/superapp/fragments/HeroeList.kt:76",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e0614f38650505.598fa2898a971.png"
+                    )
 
                 )
             ),
@@ -114,10 +130,14 @@ class HeroeList : Fragment(), OnClickListener {
                 "Marvel",
                 "Spider Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko.",
                 arrayListOf(
-                    PoderDetail("Super Velocidad")
+                    PoderDetail("Agilidad", "Poder Trepar", "Fuerza", "Sectido Aracnido")
                 ),
                 arrayListOf(
-                    CompañeroDetail("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9b4afa38650505.598fa11a29566.png")
+                    CompañeroDetail(
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9b4afa38650505.598fa11a29566.png",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9b4afa38650505.598fa11a29566.png",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/89c30c38650505.598fa2898ae5a.png"
+                    )
 
                 )
             ),
@@ -129,10 +149,44 @@ class HeroeList : Fragment(), OnClickListener {
                 "Marvel",
                 "Thor es un superhéroe ficticio que aparece en los cómics estadounidenses publicados por Marvel Comics.",
                 arrayListOf(
-                    PoderDetail("Super Fuerza")
+                    PoderDetail(
+                        "Super Fuerza",
+                        "Resistencia",
+                        "Inmune a las Enfermedades",
+                        "Bendecido por los Dioses"
+                    )
                 ),
                 arrayListOf(
-                    CompañeroDetail("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3595e038650505.598fa119bd2bc.jpg")
+                    CompañeroDetail(
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3595e038650505.598fa119bd2bc.jpg",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a21d2d38650505.598fa28915bf8.jpg",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/dcd2b838650505.59bfa81fd2c9d.png"
+                    )
+
+                )
+            ),
+            HeroesDetail(
+                "Ant Man",
+                "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/14809638650505.598fa118c91f3.jpg",
+                "Tales to Astonish # 27, Enero de 1962",
+                "Stan Lee, Larry Lieber y Jack Kirby",
+                "Marvel",
+                "El personaje era originalmente el sobrenombre del superhéroe científico brillante Hank Pym, después de" +
+                        " haber inventado una sustancia que puede hacer que la persona cambie de tamaño.",
+                arrayListOf(
+                    PoderDetail(
+                        "Reducir su Tamaño",
+                        "Comunicarse con Hormigas",
+                        "Agilidad",
+                        "Fuerza"
+                    )
+                ),
+                arrayListOf(
+                    CompañeroDetail(
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3595e038650505.598fa119bd2bc.jpg",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/dcd2b838650505.59bfa81fd2c9d.png",
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aa688238650505.598fa2898b5da.png"
+                    )
 
                 )
             )

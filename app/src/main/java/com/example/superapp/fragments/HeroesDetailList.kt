@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -40,8 +41,16 @@ class HeroesDetailList : Fragment() {
         view.findViewById<TextView>(R.id.creadorID).text = hero!!.creador
         view.findViewById<TextView>(R.id.equipoID).text = hero!!.equipo
         view.findViewById<TextView>(R.id.descripcionID).text = hero!!.descripcion
-        view.findViewById<TextView>(R.id.poderesID).text = hero!!.poderes[0].poder
-        Glide.with(this).load(hero!!.compañeros[0].picture).into(view.findViewById(R.id.compañeroID))
+        view.findViewById<Button>(R.id.poderesID).text = hero!!.poderes[0].poder
+        view.findViewById<Button>(R.id.poderes2ID).text = hero!!.poderes[0].poder2
+        view.findViewById<Button>(R.id.poderes3ID).text = hero!!.poderes[0].poder3
+        view.findViewById<Button>(R.id.poderes4ID).text = hero!!.poderes[0].poder4
+        Glide.with(this).load(hero!!.compañeros[0].picture)
+            .into(view.findViewById(R.id.compañeroID))
+        Glide.with(this).load(hero!!.compañeros[0].picture2)
+            .into(view.findViewById(R.id.compañero2ID))
+        Glide.with(this).load(hero!!.compañeros[0].picture3)
+            .into(view.findViewById(R.id.compañero3ID))
     }
 
     companion object {

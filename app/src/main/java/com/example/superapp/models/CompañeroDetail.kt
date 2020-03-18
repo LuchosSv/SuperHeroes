@@ -6,6 +6,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class CompañeroDetail(
 
-    val picture: String
+    val picture: String,
+    val picture2: String,
+    val picture3: String
 
 ):Parcelable

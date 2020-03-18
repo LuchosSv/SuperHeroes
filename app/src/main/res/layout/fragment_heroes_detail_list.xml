@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
     xmlns:android="http://schemas.android.com/apk/res/android" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
         tools:context=".fragments.HeroesDetailList">
 
@@ -16,6 +17,7 @@
             android:id="@+id/imageID"
             android:layout_width="175dp"
             android:layout_height="225dp"
+            android:contentDescription="@string/imagenHeroe"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout"
@@ -40,14 +42,14 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:textSize="22sp" />
+                android:textSize="23sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:gravity="left"
-                android:text="Fecha de aparicion: "
+                android:gravity="start"
+                android:text="@string/apaticion"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -62,8 +64,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:gravity="left"
-                android:text="Creador"
+                android:gravity="start"
+                android:text="@string/creador"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -78,8 +80,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:gravity="left"
-                android:text="Equipo"
+                android:gravity="start"
+                android:text="@string/equipo"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -112,18 +114,38 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/poderesID"
-                    android:layout_width="100dp"
+                    android:layout_width="125dp"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:textColor="@color/cardview_light_background"
-                    android:background="@drawable/border"/>
+                    android:background="@drawable/border"
+                    android:textColor="@color/cardview_light_background" />
+
+                <Button
+                    android:id="@+id/poderes2ID"
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border"
+                    android:textColor="@color/cardview_light_background" />
+
+                <Button
+                    android:id="@+id/poderes3ID"
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border"
+                    android:textColor="@color/cardview_light_background" />
+
+                <Button
+                    android:id="@+id/poderes4ID"
+                    android:layout_width="125dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border"
+                    android:textColor="@color/cardview_light_background" />
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -132,7 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginTop="16dp"
-            android:text="Descripcion"
+            android:text="@string/descripcion"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -156,23 +178,50 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginTop="32dp"
-            android:text="Compañeros"
+            android:text="@string/compañeros"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descripcionID" />
 
-        <ImageView
-            android:id="@+id/compañeroID"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop"
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.09"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/compañeroID"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/compañeros" />
+
+                <ImageView
+                    android:id="@+id/compañero2ID"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/compañeros" />
+
+                <ImageView
+                    android:id="@+id/compañero3ID"
+                    android:layout_width="125dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/compañeros" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
